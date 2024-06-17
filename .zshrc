@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#663399,standout"
 
 # starting dir
-cd ~/projects
+cd /projects
 
 # nvm config
 export NVM_DIR="$HOME/.nvm"

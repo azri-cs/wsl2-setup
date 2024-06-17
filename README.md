@@ -14,7 +14,9 @@ Taken from [here](https://github.com/nvm-sh/nvm).
 5. Replace everything with this [here](https://github.com/azri-cs/wsl2-setup/blob/main/.zshrc). The content might be different after running powerlevel10k configuration wizard.
 6. Restart terminal.
 
-### PPA from Ondřej Surý
+Personal p10k config: `yyyy3122212223221y1`
+
+### PPA from Ondřej Surý for handling multiple PHP versions
 1. `sudo apt install software-properties-common && sudo add-apt-repository ppa:ondrej/php && sudo apt update`
 2. `sudo apt-get install php8.3 php8.3-fpm && sudo apt-get install php8.3-mysql php8.3-mbstring php8.3-xml php8.3-gd php8.3-curl`
 

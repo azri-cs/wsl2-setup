@@ -20,6 +20,8 @@ Personal p10k config: `yyyy3122212223221y1`
 1. `sudo apt install software-properties-common && sudo add-apt-repository ppa:ondrej/php && sudo apt update`
 2. `sudo apt-get install php8.3 php8.3-fpm && sudo apt-get install php8.3-mysql php8.3-mbstring php8.3-xml php8.3-gd php8.3-curl`
 
+Switching PHP version: `sudo update-alternatives --config php`
+
 ### MySQL/PostgreSQL
 Taken from [here](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04).
 1. `sudo apt install mysql-server`

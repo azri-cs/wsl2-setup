@@ -54,3 +54,19 @@ Replace the installer checksum (SHA-384) from [here](https://composer.github.io/
 ### Global Laravel Create
 1. `composer global require laravel/installer`
 2. Now you can create new project using `laravel new project-name`.
+
+### Redis Server
+1. `sudo apt-get install lsb-release curl gpg`
+2. `curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg`
+3. `sudo chmod 644 /usr/share/keyrings/redis-archive-keyring.gpg`
+4. `echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list`
+5. `sudo apt-get update && sudo apt-get install redis`
+6. `systemctl status redis.service` to check its status, it should be in green "active (running)".
+7. After installing supervisor, create supervisord config file for redis-server at `/etc/supervisor/conf.d`. Refer `redis-supervisor.conf`.
+
+### Supervisor
+1. `sudo apt update && sudo apt install supervisor`
+2. `sudo systemctl status supervisor` to check its status, it should be in green "active (running)".
+3. After creating new config file for a program, run these `sudo supervisorctl reread && sudo supervisorctl update`  to retrieve latest config files & insert them to process group.
+4. `sudo supervisorctl start "redis:*"`
+5. Have `redis: ERROR (spawn error)` error? Ensure ownership of `/var/log/redis/redis.log` is correct: `sudo ls -l /var/log/redis/redis.log`. If not 'redis' user, run this `sudo chown redis:redis /var/log/redis/redis.log`.

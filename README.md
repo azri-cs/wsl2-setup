@@ -7,14 +7,16 @@ Taken from [here](https://github.com/nvm-sh/nvm).
 `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
 
 ### ZSH
-1. `sudo apt install zsh`
-2. `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-3. `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-4. `nano ~/.zshrc`
-5. Replace everything with this [here](https://github.com/azri-cs/wsl2-setup/blob/main/.zshrc). The content might be different after running powerlevel10k configuration wizard.
-6. Restart terminal.
+1. Install Fira Code Nerd Font first [here](https://github.com/ryanoasis/nerd-fonts/releases).
+2. `sudo apt install zsh`
+3. `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+4. `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+5. `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+6. `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+7. `nano ~/.zshrc`
+8. Replace everything with this [here](https://github.com/azri-cs/wsl2-setup/blob/main/.zshrc). The content might be different after running powerlevel10k configuration wizard.
+9. Restart terminal.
 
-Personal p10k config: `yyyy3122212223221y1`
 
 ### PPA from Ondřej Surý for handling multiple PHP versions
 1. `sudo apt install software-properties-common && sudo add-apt-repository ppa:ondrej/php && sudo apt update`

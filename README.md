@@ -73,3 +73,8 @@ Replace the installer checksum (SHA-384) from [here](https://composer.github.io/
 3. After creating new config file for a program, run these `sudo supervisorctl reread && sudo supervisorctl update`  to retrieve latest config files & insert them to process group.
 4. `sudo supervisorctl start "redis:*"`
 5. Have `redis: ERROR (spawn error)` error? Ensure ownership of `/var/log/redis/redis.log` is correct: `sudo ls -l /var/log/redis/redis.log`. If not 'redis' user, run this `sudo chown redis:redis /var/log/redis/redis.log`.
+
+### Google Chrome
+For headless PDF generation, web scraping & automation, testing frontends, performance & accessibility audits, and web compatibility testing.
+1. `sudo apt install -y ./google-chrome-stable_current_amd64.deb`
+2. `google-chrome --version`

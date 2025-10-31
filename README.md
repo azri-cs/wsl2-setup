@@ -76,5 +76,9 @@ Replace the installer checksum (SHA-384) from [here](https://composer.github.io/
 
 ### Google Chrome
 For headless PDF generation, web scraping & automation, testing frontends, performance & accessibility audits, and web compatibility testing.
-1. `sudo apt install -y ./google-chrome-stable_current_amd64.deb`
-2. `google-chrome --version`
+1. Initial Packages `sudo apt install curl software-properties-common apt-transport-https ca-certificates -y`
+2. Import Google Chrome GPG Key `curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg > /dev/null`
+3. Import Google Chrome APT Repository `echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list`
+4. `sudo apt update`
+5. `sudo apt install google-chrome-stable`
+6. `google-chrome --version`

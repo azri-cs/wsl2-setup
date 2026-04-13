@@ -37,7 +37,7 @@ MySQL No Root Password error?
 ### Python
 Ubuntu 22.04 ship with Python 3 pre-installed, so we only need to configure further. Further instructions [here](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-ubuntu-22-04).
 1. `sudo apt install -y python3-pip`
-2. `sudo apt install -y build-essential libssl-dev libffi-dev python3-dev`
+2. `sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-venv`
 3. (optional) install python packages by replacing `package_name`: `pip3 install package_name`
 
 ### Ruby

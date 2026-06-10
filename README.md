@@ -82,3 +82,24 @@ For headless PDF generation, web scraping & automation, testing frontends, perfo
 4. `sudo apt update`
 5. `sudo apt install google-chrome-stable`
 6. `google-chrome --version`
+
+### Docling (IBM Document Understanding)
+Docling parses PDF, DOCX, PPTX, images, HTML, and other formats into machine-readable markdown/JSON — great for RAG pipelines, document processing, and AI workflows. Repo [here](https://github.com/docling-project/docling).
+
+1. Install pipx (Python application manager, avoids PEP 668 conflicts):  
+   `sudo apt update && sudo apt install pipx`
+2. Install Tesseract OCR (for image-based PDFs and scanned documents):  
+   `sudo apt install tesseract-ocr libtesseract-dev`
+3. Install Docling via pipx with CPU-only PyTorch (for WSL2 without GPU passthrough):  
+   `pipx install docling --pip-args="--extra-index-url https://download.pytorch.org/whl/cpu"`
+4. Verify installation:  
+   `docling --version`
+
+> **Note:** If you have a GPU available in WSL2, omit the `--pip-args` flag to install the default CUDA-enabled PyTorch variant.
+
+#### Quick Usage
+Convert a PDF to markdown:  
+`docling myfile.pdf --to md`
+
+Convert with OCR for scanned documents:  
+`docling scanned-doc.pdf --to md --ocr`

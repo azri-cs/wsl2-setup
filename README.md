@@ -67,6 +67,28 @@ Replace the installer checksum (SHA-384) from [here](https://composer.github.io/
 6. `systemctl status redis.service` to check its status, it should be in green "active (running)".
 7. After installing supervisor, create supervisord config file for redis-server at `/etc/supervisor/conf.d`. Refer `redis-supervisor.conf`.
 
+### Mailpit
+Mailpit is a local SMTP mail catcher with a web UI, useful for testing email-sending during development without delivering real mail. Repo [here](https://github.com/axllent/mailpit).
+1. Download the latest Linux amd64 binary from [releases](https://github.com/axllent/mailpit/releases): `curl -fSsL -o /tmp/mailpit.tar.gz https://github.com/axllent/mailpit/releases/latest/download/mailpit-linux-amd64.tar.gz`
+2. Extract and install: `sudo tar -xzf /tmp/mailpit.tar.gz -C /usr/local/bin mailpit && sudo chmod +x /usr/local/bin/mailpit`
+3. Verify: `mailpit version`
+4. After installing supervisor, create supervisord config file for mailpit at `/etc/supervisor/conf.d`. Refer `mailpit-supervisor.conf`.
+5. `sudo supervisorctl reread && sudo supervisorctl update`
+6. `sudo supervisorctl start "mailpit:*"`
+
+By default Mailpit listens on `localhost:1025` (SMTP) and `http://localhost:8025/` (web UI). Both ports are forwarded to Windows by WSL2, so the web UI is reachable from your Windows browser.
+
+#### Quick Usage
+Point your application at the local SMTP server:
+```
+SMTP host:  localhost
+SMTP port:  1025
+Username:   (none)
+Password:   (none)
+Encryption: NONE
+```
+Open `http://localhost:8025/` to read captured mail in the web UI.
+
 ### Supervisor
 1. `sudo apt update && sudo apt install supervisor`
 2. `sudo systemctl status supervisor` to check its status, it should be in green "active (running)".

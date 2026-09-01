@@ -20,7 +20,7 @@ Taken from [here](https://github.com/nvm-sh/nvm).
 
 ### PPA from Ondřej Surý for handling multiple PHP versions
 1. `sudo apt install software-properties-common && sudo add-apt-repository ppa:ondrej/php && sudo apt update`
-2. `sudo apt-get install php8.3 php8.3-fpm && sudo apt-get install php8.3-mysql php8.3-mbstring php8.3-xml php8.3-gd php8.3-curl php8.3-zip php8.3-intl`
+2. `sudo apt-get install php8.5 php8.5-fpm && sudo apt-get install php8.5-mysql php8.5-mbstring php8.5-xml php8.5-gd php8.5-curl php8.5-zip php8.5-intl php8.5-bcmath php8.5-sqlite3`
 
 Switching PHP version: `sudo update-alternatives --config php`
 

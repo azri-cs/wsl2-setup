@@ -119,3 +119,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+# user-local tools (uv, pipx apps, etc.)
+export PATH="$HOME/.local/bin:$PATH"
+
+# bun
+export PATH="$HOME/.bun/bin:$PATH"
+
+# zoxide (smarter cd)
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
